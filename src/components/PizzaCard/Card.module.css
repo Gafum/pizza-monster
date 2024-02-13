@@ -17,7 +17,7 @@
 }
 
 .pizzaPhoto {
-   aspect-ratio: 1/1;
+   height: 280px;
    width: 280px;
    background-position: center;
    background-repeat: no-repeat;
@@ -25,6 +25,13 @@
    position: relative;
    transition: top 0.2s;
    top: 0;
+   aspect-ratio: 1;
+}
+
+.pizzaPhoto::before {
+   content: "";
+   display: block;
+   padding-top: 100%;
 }
 
 .textConteiner {
@@ -55,13 +62,20 @@
    width: 100%;
    justify-content: space-between;
    align-items: center;
+   overflow-wrap: break-word;
+   word-break: break-word;
    text-wrap: nowrap;
+   white-space: nowrap;
 }
 
 .card__buyBlock__text_price {
    font-weight: 600;
    font-size: 20px;
    justify-self: flex-end;
+   overflow-wrap: break-word;
+   word-break: break-word;
+   text-wrap: nowrap;
+   white-space: nowrap;
 }
 
 .card__button {
@@ -128,6 +142,8 @@
    }
 
    .pizzaPhoto {
+      height: auto;
+      min-height: 50px;
       width: 100%;
       max-width: 300px;
    }

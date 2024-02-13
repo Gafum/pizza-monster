@@ -8,11 +8,12 @@
 }
 
 .skeletonPhoto {
-   aspect-ratio: 1;
    width: 280px;
+   height: 280px;
    margin: 10px;
    border-radius: 100%;
    animation: skeleton-loading 1s linear infinite alternate;
+   aspect-ratio: 1;
 }
 
 .skeletonText__title {
@@ -36,6 +37,8 @@
 
 @media (max-width: 600px) {
    .skeletonPhoto {
+      max-height: 280px;
+      height: 100%;
       width: 100%;
       max-width: 280px;
    }

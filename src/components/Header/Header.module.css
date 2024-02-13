@@ -25,7 +25,10 @@
    text-align: center;
    transition: text-shadow 0.4s;
    padding-left: 8px;
+   overflow-wrap: break-word;
+   word-break: break-word;
    text-wrap: nowrap;
+   white-space: nowrap;
 }
 
 .mainIcon {
@@ -42,7 +45,6 @@
    padding: 8px;
    border-radius: 8px;
    display: flex;
-   gap: 10px;
    justify-content: center;
    align-items: center;
    align-content: center;
@@ -50,6 +52,7 @@
 }
 
 .header__title_basketBtn > svg {
+   margin-right: 10px;
    transition: all 0.4s;
    stroke: black;
    width: 18px;

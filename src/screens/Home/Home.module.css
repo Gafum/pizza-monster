@@ -51,7 +51,8 @@
       grid-template-columns: repeat(1, 1fr);
    }
    .filterBlock {
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
       gap: 10px;
       margin-bottom: 10px;
    }
