@@ -1,0 +1,42 @@
+@keyframes skeleton-loading {
+   0% {
+      background-color: hsl(0, 0%, 85%);
+   }
+   100% {
+      background-color: hsl(0, 0%, 96%);
+   }
+}
+
+.skeletonPhoto {
+   aspect-ratio: 1;
+   width: 280px;
+   margin: 10px;
+   border-radius: 100%;
+   animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.skeletonText__title {
+   width: 60%;
+   height: 29px;
+   animation: skeleton-loading 1s linear infinite alternate;
+   border-radius: 4px;
+}
+
+.skeletonText__description {
+   width: 100%;
+   height: 72px;
+   animation: skeleton-loading 1s linear infinite alternate;
+   border-radius: 4px;
+}
+
+.skeletonText__price {
+   margin-top: 5px;
+   width: 30%;
+}
+
+@media (max-width: 600px) {
+   .skeletonPhoto {
+      width: 100%;
+      max-width: 280px;
+   }
+}

@@ -1,0 +1,21 @@
+.mainContainer {
+   position: relative;
+   padding: 96px 20px 0;
+   display: flex;
+   justify-content: center;
+   align-content: flex-start;
+   height: fit-content;
+   flex: 1;
+}
+
+@media (max-width: 600px) {
+   .mainContainer {
+      padding: 64px 14px 0;
+   }
+}
+
+@media (max-width: 250px) {
+   .mainContainer {
+      padding: 64px 8px 0;
+   }
+}

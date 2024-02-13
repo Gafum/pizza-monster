@@ -1,0 +1,156 @@
+.card {
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: center;
+   align-content: center;
+   width: 280px;
+   height: 100%;
+}
+
+.canHover {
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+}
+
+.pizzaPhoto {
+   aspect-ratio: 1/1;
+   width: 280px;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   position: relative;
+   transition: top 0.2s;
+   top: 0;
+}
+
+.textConteiner {
+   width: 100%;
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-start;
+   align-items: flex-start;
+   align-content: center;
+   gap: 8px;
+   flex: 1;
+}
+
+.card__text {
+   text-align: left;
+   font-weight: 500;
+   font-size: 14px;
+}
+
+.card__text_title {
+   font-weight: 600;
+   font-size: 24px;
+}
+
+.card__buyBlock {
+   display: flex;
+   width: 100%;
+   justify-content: space-between;
+   align-items: center;
+   text-wrap: nowrap;
+}
+
+.card__buyBlock__text_price {
+   font-weight: 600;
+   font-size: 20px;
+   justify-self: flex-end;
+}
+
+.card__button {
+   --myColor: #f8892f;
+   background-color: var(--myColor);
+   padding: 5px 20px 7px;
+   border-radius: 10px;
+   transition-duration: 0.3s;
+   transition-property: background-color top;
+   position: relative;
+   top: 0;
+}
+
+.textConteiner .canHover {
+   justify-content: flex-end;
+   padding-right: 10px;
+}
+
+.card__button_add {
+   background-color: black;
+   color: var(--myColor);
+}
+
+@media (hover: hover) {
+   .canHover:hover > div,
+   .canHover:hover > button {
+      top: 4px;
+   }
+}
+
+.card__button_add > span {
+   animation: spawn-logo 0.2s ease-in;
+   text-align: center;
+   position: absolute;
+   right: -8px;
+   bottom: -8px;
+   display: inline-block;
+   background-color: var(--myColor);
+   color: black;
+   width: 24px;
+   height: 24px;
+   border-radius: 100%;
+   border: 1px solid black;
+}
+
+@keyframes spawn-logo {
+   0% {
+      scale: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 0;
+   }
+   100% {
+      scale: 1;
+      right: -8px;
+      bottom: -8px;
+      opacity: 1;
+   }
+}
+
+@media (max-width: 600px) {
+   .card {
+      width: 100%;
+   }
+
+   .pizzaPhoto {
+      width: 100%;
+      max-width: 300px;
+   }
+
+   .textConteiner {
+      width: 100%;
+      padding: 0;
+      gap: 4px;
+   }
+   .card__text_title {
+      font-size: 20px;
+   }
+   .card__text {
+      font-size: 12px;
+   }
+   .card__button {
+      padding: 4px 10px 6px;
+   }
+
+   .card__button_add > span {
+      right: -12px;
+      bottom: -10px;
+      width: 22px;
+      height: 22px;
+   }
+}

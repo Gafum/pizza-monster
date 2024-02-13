@@ -1,0 +1,74 @@
+.basket {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: flex-start;
+   align-items: center;
+   align-content: center;
+   flex-direction: column;
+   gap: 20px;
+   max-width: 1320px;
+}
+
+.basket__buyMenu {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+   width: 100%;
+   gap: 20px;
+   margin-top: 20px;
+}
+
+.basket__btn {
+   text-align: center;
+   background-color: #e0342e;
+   border-radius: 5px;
+   padding: 5px 10px 7px;
+   color: #faff00;
+   width: 100%;
+   max-width: 200px;
+   transition-duration: 0.4s;
+   transition-property: background-color;
+}
+
+.basket__btn > span {
+   text-wrap: nowrap;
+   margin-left: 14px;
+   color: inherit;
+}
+
+.basket__btn_clean {
+   background-color: transparent;
+   border: 1px solid #e0342e;
+   padding: 4px 9px 6px;
+   color: #e0342e;
+   transition-property: background-color color;
+}
+
+@media (hover: hover) {
+   .basket__btn:hover {
+      background-color: #000000;
+   }
+
+   .basket__btn.basket__btn_clean:hover {
+      background-color: #e0342e;
+      color: #faff00;
+   }
+}
+
+.basket__buyMenu > .basket__btn {
+   max-width: 100%;
+}
+
+@media (max-width: 600px) {
+   .basket__buyMenu {
+      gap: 10px;
+   }
+}
+
+@media (max-width: 300px) {
+   .basket__buyMenu {
+      flex-direction: column;
+   }
+}

@@ -1,0 +1,24 @@
+.footer {
+   background-color: #e0342e;
+   width: 100%;
+   padding: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+   min-height: 180px;
+   height: 180px;
+   margin-top: 80px;
+   gap: 20px;
+}
+
+.footer__links {
+   color: #faff00;
+   transition: all 0.2s;
+}
+
+@media (hover: hover) {
+   .footer__links:hover {
+      color: black;
+   }
+}
