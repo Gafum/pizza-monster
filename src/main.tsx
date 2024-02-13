@@ -8,7 +8,7 @@ import { Provider } from "react-redux";
 import Footer from "./components/Footer/Footer";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-   <BrowserRouter>
+   <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Provider store={store}>
          <Header />
          <div
