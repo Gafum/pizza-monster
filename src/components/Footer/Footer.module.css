@@ -15,12 +15,12 @@
 .footer__links {
    color: #faff00;
    transition: all 0.2s;
-   margin-left: 20px;
 }
 
-@supports (gap: 10px) {
+@supports not (gap: 10px) {
    .footer__links {
-      margin-left: 0;
+      display: flex;
+      margin-left: 20px;
    }
 }
 
