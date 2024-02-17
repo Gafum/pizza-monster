@@ -70,7 +70,14 @@
 
     input,
     button,
-    textarea {
+    textarea,
+    select {
+      -webkit-user-select: initial;
+      -khtml-user-select: initial;
+      -moz-user-select: initial;
+      -ms-user-select: initial;
+      user-select: initial;
+      pointer-events: all;
       -webkit-appearance: none;
       -moz-appearance: none;
       appearance: none;
@@ -85,6 +92,10 @@
       cursor: pointer;
       -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
       -webkit-tap-highlight-color: transparent;
+    }
+
+    select {
+      cursor: pointer;
     }
 
     button::-moz-focus-inner {

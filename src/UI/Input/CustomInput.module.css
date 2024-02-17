@@ -39,7 +39,7 @@
 
 .closeBtn {
    position: absolute;
-   top: 9px;
+   top: calc(var(--padding-parameter-top) - 2px);
    right: 3px;
    display: flex;
    justify-content: center;
@@ -52,10 +52,12 @@
    transition-duration: 0.2s;
 }
 
-.closeBtn:hover,
-.closeBtn:focus {
-   transform: rotate(-90deg);
-   border: 2px solid black;
+@media (hover: hover) {
+   .closeBtn:hover,
+   .closeBtn:focus {
+      transform: rotate(-90deg);
+      border: 2px solid black;
+   }
 }
 
 @media (max-width: 600px) {

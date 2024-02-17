@@ -20,9 +20,20 @@ function SelectElement({
          style={{
             display: "flex",
             justifyContent: "center",
-            alignContent: "center",
+            alignItems: "center",
+            gap: "4px",
+            cursor: "pointer"
          }}
       >
+         <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            width="15"
+            height="15"
+            style={{ position: "relative", top: "1px" }}
+         >
+            <path d="M10 1L5 8h10l-5-7zm0 18l5-7H5l5 7z"></path>
+         </svg>
          <select name={name} onChange={changeFilter}>
             {optionList.map((element) => (
                <option value={element.value.toLowerCase()} key={element.value}>

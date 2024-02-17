@@ -13,7 +13,13 @@ function CustomInput({ placeholder, callBackFunct }: InputProps): ReactElement {
 
    const updateSearch = useCallback(
       debounce((str: string) => {
-         callBackFunct(str);
+         if (str == "") {
+            callBackFunct("");
+         }
+         if (str.trim().replace(/ /g, "") == "") {
+            return;
+         }
+         callBackFunct(str.trim());
       }, 200),
       []
    );
