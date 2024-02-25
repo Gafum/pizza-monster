@@ -20,7 +20,7 @@ function CustomInput({ placeholder, callBackFunct }: InputProps): ReactElement {
             return;
          }
          callBackFunct(str.trim());
-      }, 200),
+      }, 350),
       []
    );
 

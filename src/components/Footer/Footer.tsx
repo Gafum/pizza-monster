@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import styles from "./Footer.module.css";
 
-function Footer(): JSX.Element {
+function Footer({ isBasket = false }: { isBasket?: boolean }): JSX.Element {
    const { pathname } = useLocation();
 
    /* Create right text */
@@ -9,11 +9,12 @@ function Footer(): JSX.Element {
       about: "About",
       basket: "Basket",
    };
-   if (pathname == "/basket") {
-      data.basket = "Home";
+   if (pathname == "/about") {
+      data.about = "Home";
    } else {
-      if (pathname == "/about") {
-         data.about = "Home";
+      if (pathname == "/basket") {
+         if (!isBasket) return <></>;
+         data.basket = "Home";
       }
    }
 

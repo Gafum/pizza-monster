@@ -1,9 +1,16 @@
+import { motion } from "framer-motion";
 import styles from "./About.module.css";
 
 function About(): JSX.Element {
    scrollTo(0, 0);
    return (
-      <main className={styles.aboutPage}>
+      <motion.main
+         className={styles.aboutPage}
+         initial={{ opacity: 0 }}
+         animate={{ opacity: 1 }}
+         exit={{ opacity: 0 }}
+         transition={{ duration: 0.2 }}
+      >
          <p>
             Welcome to Pizza Monster, where your pizza cravings meet the magic
             of technology. We are dedicated to providing a seamless and
@@ -75,7 +82,7 @@ function About(): JSX.Element {
                <span>my_email@email.com</span>
             </li>
          </ul>
-      </main>
+      </motion.main>
    );
 }
 

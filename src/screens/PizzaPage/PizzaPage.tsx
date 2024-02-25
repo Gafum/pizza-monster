@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import style from "./PizzaPage.module.css";
 import CustomButtonForCard from "../../components/PizzaCard/CustomButtonForCard";
+import { motion } from "framer-motion";
 
 function PizzaPage(): JSX.Element {
    const data = useParams();
@@ -48,7 +49,14 @@ function PizzaPage(): JSX.Element {
                style={{ backgroundImage: `url(${pizza?.pic}` }}
             />
          </div>
-         <div className={style.pizzaPage}>
+
+         <motion.div
+            className={style.pizzaPage}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2 }}
+            exit={{ opacity: 0 }}
+         >
             <div
                className={style.staticpizzaImg}
                style={{ backgroundImage: `url(${pizza?.pic}` }}
@@ -64,7 +72,7 @@ function PizzaPage(): JSX.Element {
                   addingClasses={[style.buyPizzaBtn]}
                />
             </p>
-         </div>
+         </motion.div>
       </>
    );
 }
