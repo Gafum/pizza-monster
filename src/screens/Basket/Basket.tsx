@@ -5,19 +5,21 @@ import BasketElement from "../../components/BasketElement/BasketElement";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { findPrice } from "../../functions/findPrice";
 import { AnimatePresence, motion } from "framer-motion";
 import Footer from "../../components/Footer/Footer";
+import { BtnsInBasket } from "./BtnsInBasket";
 
 function Basket(): JSX.Element {
    const [pizzasList, setPizzasList] = useState<IPizzaElement[]>([]);
    const [isLoading, setIsLoading] = useState<boolean>(false);
 
    /* Redux data */
-   const pizzasInBasket = useSelector(pizzasSelector);
+   const pizzasInBasket: { [key: string]: number } =
+      useSelector(pizzasSelector);
    const dispatch = useDispatch();
    const navigator = useNavigate();
 
+   // Get Data
    useEffect(() => {
       scrollTo(0, 0);
       setIsLoading(true);
@@ -49,6 +51,7 @@ function Basket(): JSX.Element {
       dispatch(cleanBasket());
    }
 
+   // Basket is empty
    if (!Boolean(Object.keys(pizzasInBasket).length)) {
       return (
          <motion.div
@@ -84,6 +87,7 @@ function Basket(): JSX.Element {
       );
    }
 
+   // Loading
    if (isLoading) {
       return <div style={{ height: "100vh" }}>Loading...</div>;
    }
@@ -114,27 +118,11 @@ function Basket(): JSX.Element {
                <FindRightData key={id} id={id} />
             ))}
 
-            <motion.div
-               style={{ paddingBottom: "270px" }}
-               className={styles.basket__buyMenu}
-               layout
-            >
-               <Link
-                  to="/"
-                  className={`${styles.basket__btn} ${styles.basket__btn_clean}`}
-               >
-                  Add more
-               </Link>
-               <button className={styles.basket__btn} onClick={buyProduction}>
-                  Buy
-                  <span>
-                     {findPrice({
-                        items: pizzasInBasket,
-                        pizzasPrices: pizzasList,
-                     }) + " $"}
-                  </span>
-               </button>
-            </motion.div>
+            <BtnsInBasket
+               buyProduction={buyProduction}
+               pizzasInBasket={pizzasInBasket}
+               pizzasList={pizzasList}
+            />
          </AnimatePresence>
       </motion.div>
    );

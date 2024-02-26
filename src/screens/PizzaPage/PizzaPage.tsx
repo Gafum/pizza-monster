@@ -90,7 +90,7 @@ function PizzaPage(): JSX.Element {
             />
             <h2 className={style.pizzaName}>{pizza?.name}</h2>
             <p className={style.pizzaDescription}>{pizza?.description}</p>
-            <p className={style.buyContainer}>
+            <div className={style.buyContainer}>
                <span className={style.pizzaPirce}>
                   {pizza?.price.toFixed(2)} $
                </span>
@@ -98,7 +98,7 @@ function PizzaPage(): JSX.Element {
                   id={pizza?.id}
                   addingClasses={[style.buyPizzaBtn]}
                />
-            </p>
+            </div>
          </m.div>
       </LazyMotion>
    );

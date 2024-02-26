@@ -44,8 +44,9 @@
 @media (max-width: 600px) {
    .skeletonPhoto {
       max-height: 280px;
+      max-width: 280px;
       min-height: 50px;
       width: 100%;
-      max-width: 280px;
+      height: 100%;
    }
 }
