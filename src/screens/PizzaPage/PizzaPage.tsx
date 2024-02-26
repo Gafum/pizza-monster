@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import style from "./PizzaPage.module.css";
 import CustomButtonForCard from "../../components/PizzaCard/CustomButtonForCard";
-import { motion } from "framer-motion";
+import { LazyMotion, domAnimation, m } from "framer-motion";
 
 function PizzaPage(): JSX.Element {
    const data = useParams();
@@ -11,6 +11,7 @@ function PizzaPage(): JSX.Element {
    const [errorWithData, setErrorWithData] = useState<boolean>(false);
    const [isLoading, setIsLoading] = useState<boolean>(false);
 
+   //Get Data about pizza
    useEffect(() => {
       if (!data || !data.pizzaId) {
          console.log("Problems with data");
@@ -33,24 +34,50 @@ function PizzaPage(): JSX.Element {
          .finally(() => setIsLoading(false));
    }, [data]);
 
+   // Loading Data
    if (isLoading) {
-      return <>Loading</>;
+      return (
+         <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+         >
+            Loading...
+         </m.div>
+      );
    }
 
+   // Pizza not found
    if (errorWithData || !pizza) {
       return <div>Pizza not found</div>;
    }
 
+   function isWide() {
+      if (window.innerWidth > 720) {
+         return true;
+      } else {
+         return false;
+      }
+   }
+
    return (
-      <>
+      <LazyMotion features={domAnimation}>
          <div className={style.boxForImg}>
-            <div
+            <m.div
                className={style.pizzaImg}
                style={{ backgroundImage: `url(${pizza?.pic}` }}
+               initial={{
+                  opacity: 0.5,
+                  right: isWide() ? -50 : 0,
+                  top: isWide() ? 0 : -50,
+                  zIndex: 0,
+               }}
+               animate={{ opacity: 1, right: 0, top: 0 }}
+               exit={{ opacity: 0 }}
+               transition={{ duration: 0.2 }}
             />
          </div>
-
-         <motion.div
+         <m.div
             className={style.pizzaPage}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -72,8 +99,8 @@ function PizzaPage(): JSX.Element {
                   addingClasses={[style.buyPizzaBtn]}
                />
             </p>
-         </motion.div>
-      </>
+         </m.div>
+      </LazyMotion>
    );
 }
 

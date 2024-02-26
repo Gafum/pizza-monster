@@ -57,12 +57,29 @@ function Basket(): JSX.Element {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             className={styles.basket}
-            style={{ justifyContent: "center", alignContent: "center" }}
+            style={{
+               justifyContent: "center",
+               alignContent: "flex-start",
+               paddingTop: "20vh",
+            }}
          >
             <span>Basket is empty</span>
             <Link to="/" className={styles.basket__btn}>
                Buy something
             </Link>
+            <motion.div
+               layout
+               style={{
+                  position: "absolute",
+                  zIndex: "2",
+                  bottom: 0,
+                  width: "100%",
+                  maxWidth: "100vw",
+                  left: 0,
+               }}
+            >
+               <Footer isBasket={true} />
+            </motion.div>
          </motion.div>
       );
    }

@@ -4,7 +4,6 @@ import CustomButtonForCard from "./CustomButtonForCard";
 
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
 
 function Card({
    id,
@@ -14,12 +13,7 @@ function Card({
    price,
 }: IPizzaElement): ReactElement {
    return (
-      <motion.div
-         className={styles.card}
-         initial={{ y: 10, opacity: 0 }}
-         animate={{ y: 0, opacity: 1 }}
-         transition={{ duration: 0.2 }}
-      >
+      <div className={styles.card}>
          <Link to={`/pizza/${id}`} className={styles.canHover}>
             <div
                style={{ backgroundImage: `url(${pic})` }}
@@ -50,7 +44,7 @@ function Card({
                <CustomButtonForCard id={id} />
             </div>
          </div>
-      </motion.div>
+      </div>
    );
 }
 
