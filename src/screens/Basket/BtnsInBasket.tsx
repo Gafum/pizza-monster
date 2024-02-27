@@ -15,7 +15,12 @@ export function BtnsInBasket({
 }) {
    // Smooth price animation
    const priceValue = useSmoothCounter(
-      0,
+      Number(
+         findPrice({
+            items: pizzasInBasket,
+            pizzasPrices: pizzasList,
+         })
+      ) * 100,
       Number(
          findPrice({
             items: pizzasInBasket,

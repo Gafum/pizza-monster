@@ -28,7 +28,7 @@ To run this project locally, follow these steps:
 
 To deploy this project on GitHub Pages, use the following command:
 
-yarn deploy
+`yarn deploy`
 
 ## Contributing
 
