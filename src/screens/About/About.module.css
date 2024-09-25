@@ -2,6 +2,10 @@
    max-width: 1320px;
 }
 
+.aboutPage p strong {
+   font-weight: bold;
+}
+
 .smallTitle {
    font-size: 24px;
    color: #e0342e;

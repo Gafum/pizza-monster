@@ -83,6 +83,29 @@ function About(): JSX.Element {
                   <span>my_email@email.com</span>
                </li>
             </ul>
+
+            <h2 className={styles.smallTitle}>Developer</h2>
+            <p>
+               During the development, we used such technologies as{" "}
+               <strong>Vite</strong>, <strong>React</strong>,{" "}
+               <strong>Github</strong> and <strong>SSS</strong>. The images for
+               the examples set of flash cards were taken from the next
+               resources: <strong>DODO Pizza</strong>. Figma was used to draw
+               the icons. Also here you can see the social media of the author:
+            </p>
+            <ul className={styles.listConteiner}>
+               <li className={styles.listElement}>
+                  <a href="https://github.com/Gafum">GitHub</a>
+               </li>
+               <li className={styles.listElement}>
+                  <a href="https://www.youtube.com/@gafum">YouTube</a>
+               </li>
+               <li className={styles.listElement}>
+                  <a href="https://play.google.com/store/apps/dev?id=5298640550031789087&gl=DE">
+                     Google Play
+                  </a>
+               </li>
+            </ul>
          </m.main>
       </LazyMotion>
    );
