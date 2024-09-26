@@ -2,7 +2,8 @@
    max-width: 1320px;
 }
 
-.aboutPage p strong {
+.aboutPage p strong,
+.aboutPage p a {
    font-weight: bold;
 }
 
@@ -35,14 +36,15 @@
    background-color: #e0342e;
 }
 
-.listElement_withIcons {
+.listElement_withIcons,
+.listElement_withIcons > a {
    margin-top: 6px;
    display: flex;
    justify-content: flex-start;
    align-items: center;
 }
 
-.listElement_withIcons > span {
+.listElement_withIcons span {
    margin-left: 12px;
    font-size: 20px;
    user-select: text;
