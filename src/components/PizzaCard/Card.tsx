@@ -4,6 +4,7 @@ import CustomButtonForCard from "./CustomButtonForCard";
 
 import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
+import { createPictureURL } from "../../functions/createPictureURL";
 
 function Card({ id, name, description, price }: IPizzaElement): ReactElement {
    return (
@@ -11,10 +12,7 @@ function Card({ id, name, description, price }: IPizzaElement): ReactElement {
          <Link to={`/pizza/${id}`} className={styles.canHover}>
             <div
                style={{
-                  backgroundImage: `url("/pizza-monster/IMG/Pizzas/${name.replace(
-                     / /g,
-                     ""
-                  )}.webp")`,
+                  backgroundImage: `url("${createPictureURL(id)}")`,
                }}
                className={styles.pizzaPhoto}
             />

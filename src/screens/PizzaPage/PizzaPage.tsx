@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import style from "./PizzaPage.module.css";
 import CustomButtonForCard from "../../components/PizzaCard/CustomButtonForCard";
 import { LazyMotion, domAnimation, m } from "framer-motion";
+import { createPictureURL } from "../../functions/createPictureURL";
 
 function PizzaPage(): JSX.Element {
    const data = useParams();
@@ -65,7 +66,9 @@ function PizzaPage(): JSX.Element {
          <div className={style.boxForImg}>
             <m.div
                className={style.pizzaImg}
-               style={{ backgroundImage: `url(${pizza?.pic}` }}
+               style={{
+                  backgroundImage: `url("${createPictureURL(pizza?.id)}")`,
+               }}
                initial={{
                   opacity: 0.5,
                   right: isWide() ? -50 : 0,
@@ -86,7 +89,9 @@ function PizzaPage(): JSX.Element {
          >
             <div
                className={style.staticpizzaImg}
-               style={{ backgroundImage: `url(${pizza?.pic}` }}
+               style={{
+                  backgroundImage: `url("${createPictureURL(pizza?.id)}")`,
+               }}
             />
             <h2 className={style.pizzaName}>{pizza?.name}</h2>
             <p className={style.pizzaDescription}>{pizza?.description}</p>
