@@ -28,6 +28,12 @@
    font-size: 20px;
 }
 
+@media (hover: hover) {
+   .buyContainer button:hover {
+      top: 2px;
+   }
+}
+
 .pizzaPirce {
    font-size: inherit;
    font-weight: bold;
