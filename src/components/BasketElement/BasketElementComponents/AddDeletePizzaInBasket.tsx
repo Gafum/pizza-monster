@@ -52,7 +52,10 @@ function BtnsMenuInBasket({
                </svg>
             </button>
          </div>
-         <span className={styles.myPrice}>
+         <span
+            className={styles.myPrice}
+            title={`${numberOfPizza} * ${price}$`}
+         >
             {(numberOfPizza * price).toFixed(2)} $
          </span>
       </div>

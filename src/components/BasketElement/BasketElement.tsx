@@ -4,9 +4,9 @@ import { removeElementFromBasket } from "../../features/BasketSlice";
 import BtnsMenuInBasket from "./BasketElementComponents/AddDeletePizzaInBasket";
 import { motion } from "framer-motion";
 import { createPictureURL } from "../../functions/createPictureURL";
+import { Link } from "react-router-dom";
 
-interface IBasketElement
-   extends Omit<IPizzaElement, "name" & "id" & "price"> {
+interface IBasketElement extends Omit<IPizzaElement, "name" & "id" & "price"> {
    pizzasInBasket: { [key: string]: number };
 }
 
@@ -25,11 +25,13 @@ function BasketElement({
    return (
       <motion.div layout className={styles.basketElement}>
          <div className={styles.firstRow}>
-            <div
-               style={{ backgroundImage: `url("${createPictureURL(id)}")` }}
-               className={styles.pizzaPhotoInBasket}
-            />
-            <span className={styles.nameOfPizza}>{name}</span>
+            <Link to={`/pizza/${id}`}>
+               <div
+                  style={{ backgroundImage: `url("${createPictureURL(id)}")` }}
+                  className={styles.pizzaPhotoInBasket}
+               />
+               <span className={styles.nameOfPizza}>{name}</span>
+            </Link>
             <BtnsMenuInBasket
                id={id}
                pizzasInBasket={pizzasInBasket}

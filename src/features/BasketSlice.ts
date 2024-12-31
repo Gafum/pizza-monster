@@ -18,7 +18,9 @@ export const basketSlice = createSlice({
          if (!Boolean(action.payload in state.items)) {
             state.items[action.payload] = 0;
          }
-         state.items[action.payload] += 1;
+         if (state.items[action.payload] < 99) {
+            state.items[action.payload] += 1;
+         }
       },
       popElementInBasket: (state, action: PayloadAction<string>) => {
          if (state.items[action.payload] <= 1) {

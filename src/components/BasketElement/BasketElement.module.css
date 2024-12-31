@@ -31,12 +31,15 @@
    min-width: 160px;
    text-align: center;
    font-size: 24px;
+   text-align: left;
 }
 
 .btnsMenu {
    width: fit-content;
    display: flex;
-   gap: 30px;
+   gap: 15px;
+   gap: min(45px, calc(5vw - 32px));
+   gap: max(1px, min(45px, calc(5vw - 32px)));
    flex: 1 1 0%;
    justify-content: center;
 }
@@ -87,12 +90,17 @@
    height: 20px;
 }
 
-.firstRow {
+.firstRow,
+.firstRow > a {
    display: flex;
    justify-content: center;
    align-items: center;
    align-content: center;
    gap: 10px;
+}
+
+.firstRow > a {
+   gap: 40px;
 }
 
 .firstRow .btnsMenu {
@@ -128,6 +136,9 @@
    .firstRow {
       margin-left: 2.5px;
    }
+   .firstRow > a {
+      gap: 15px;
+   }
    .btnsMenu {
       width: 100%;
       justify-content: space-between;
@@ -151,7 +162,8 @@
       justify-content: space-between;
    }
 
-   .firstRow {
+   .firstRow,
+   .firstRow > a {
       flex-direction: column;
       gap: 0;
       margin-left: 0;
@@ -160,7 +172,11 @@
       align-items: center;
    }
 
-   .firstRow > span {
+   .nameOfPizza {
+      text-align: center;
+   }
+
+   .firstRow > a > span {
       font-size: 18px;
       min-width: auto;
    }
@@ -174,6 +190,7 @@
    .btnsMenu {
       margin: 0;
       justify-content: flex-end;
+      gap: 30px;
    }
 
    .addDeletePizza {
