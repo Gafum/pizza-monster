@@ -70,10 +70,17 @@
    .basket__buyMenu {
       gap: 10px;
    }
+
+   .basket__btn > span {
+      margin-left: 7px;
+   }
 }
 
 @media (max-width: 300px) {
    .basket__buyMenu {
       grid-template-columns: repeat(1, 1fr);
+   }
+   .basket__btn > span {
+      margin-left: 3px;
    }
 }

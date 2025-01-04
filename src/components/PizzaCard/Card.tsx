@@ -25,7 +25,10 @@ function Card({ id, name, description, price }: IPizzaElement): ReactElement {
             >
                {name}
             </h3>
-            <p className={styles.card__text} style={{ flex: "1" }}>
+            <p
+               className={[styles.card__text, styles.max_line_3].join(" ")}
+               style={{ flex: "1" }}
+            >
                {description}
             </p>
 

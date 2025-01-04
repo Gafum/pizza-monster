@@ -101,6 +101,13 @@
 
 .firstRow > a {
    gap: 40px;
+   transition: filter 0.3s;
+}
+
+@media (hover: hover) {
+   .firstRow > a:hover {
+      filter: drop-shadow(0 0px 4px #a83b3b8e);
+   }
 }
 
 .firstRow .btnsMenu {

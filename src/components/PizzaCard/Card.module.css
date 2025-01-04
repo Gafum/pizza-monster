@@ -52,7 +52,7 @@
    font-size: 14px;
 }
 
-p.card__text {
+.max_line_3.card__text {
    display: -webkit-box;
    -webkit-box-orient: vertical;
    overflow: hidden;
@@ -92,9 +92,10 @@ p.card__text {
    padding: 5px 20px 7px;
    border-radius: 10px;
    transition-duration: 0.3s;
-   transition-property: background-color top;
+   transition-property: all;
    position: relative;
    top: 0;
+   min-width: min(25vw, 50%);
 }
 
 .textConteiner .canHover {
