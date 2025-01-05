@@ -83,6 +83,32 @@
    scale: 0;
 }
 
+@media (min-width: 1440px) {
+   .boxForImg {
+      height: 95%;
+      position: static;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      min-height: 500px;
+   }
+   .pizzaImg {
+      height: min(100%, 45vw);
+      width: auto;
+      aspect-ratio: 1;
+      background-size: cover;
+      position: static;
+      transform: translate(0, 0);
+   }
+   .pizzaPage {
+      height: 95%;
+      min-height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+}
+
 @media (max-width: 720px) {
    .pizzaImg {
       height: 120vw;

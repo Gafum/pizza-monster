@@ -11,9 +11,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <Provider store={store}>
          <Header />
-         <div
-            style={{ display: "flex", flexDirection: "column", height: "100%" }}
-         >
+         <div className="mainConteinerAfterRoot">
             <Container>
                <MainRoutesProvider />
             </Container>
