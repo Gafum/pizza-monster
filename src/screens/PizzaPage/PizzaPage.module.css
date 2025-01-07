@@ -90,6 +90,24 @@
 }
 
 @media (min-width: 1440px) {
+   .pizzaName {
+      font-size: 50px;
+   }
+   .pizzaDescription {
+      font-size: 22px;
+   }
+   .pizzaPirce {
+      font-size: 30px;
+   }
+   .buyContainer button {
+      font-size: 30px;
+      padding: 5px 20px 8px;
+   }
+   .buyContainer button span {
+      font-size: 20px;
+      width: 30px;
+      height: 30px;
+   }
    .boxForImg {
       height: 95%;
       position: static;
@@ -118,6 +136,9 @@
 }
 
 @media (max-width: 720px) {
+   .boxForImg {
+      min-height: auto;
+   }
    .pizzaImg {
       height: 120vw;
       width: 120vw;
@@ -125,8 +146,10 @@
       right: auto;
       left: -6%;
       top: 0;
-      max-height: auto;
-      max-width: auto;
+      max-height: none;
+      max-width: none;
+      min-height: auto;
+      min-width: auto;
    }
 
    .pizzaPage {

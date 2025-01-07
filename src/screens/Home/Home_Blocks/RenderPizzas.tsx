@@ -63,7 +63,7 @@ function RenderPizzas(): JSX.Element {
    if (isLoading) {
       return (
          <section className={styles.pizzaList}>
-            {[...Array(6)].map((_, i) => (
+            {[...Array(9)].map((_, i) => (
                <SceletonLoader key={i} />
             ))}
          </section>
@@ -90,8 +90,8 @@ function RenderPizzas(): JSX.Element {
 
    return (
       <section className={styles.pizzaList}>
-         {pizzasList?.filter(filteringData).map((i) => (
-            <Card {...i} key={i.id} />
+         {pizzasList?.filter(filteringData).map((pizza) => (
+            <Card {...pizza} key={pizza.id} />
          ))}
       </section>
    );
