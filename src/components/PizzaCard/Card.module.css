@@ -1,3 +1,7 @@
+.cardConteiner {
+   position: relative;
+}
+
 .card {
    display: flex;
    flex-direction: column;
@@ -6,6 +10,19 @@
    align-content: center;
    width: 280px;
    height: 100%;
+   animation-name: hide-skeleton;
+   animation-duration: 1s;
+   animation-direction: reverse;
+}
+
+.cardConteiner > .skeletonCard {
+   position: absolute;
+   top: 0;
+   left: 0;
+   z-index: 0;
+   animation-name: hide-skeleton;
+   animation-duration: 1s;
+   opacity: 0;
 }
 
 .canHover {
@@ -14,6 +31,14 @@
    justify-content: center;
    align-items: center;
    align-content: center;
+   position: relative;
+}
+
+.pizzaBackPhoto {
+   background-color: #f8892f;
+   height: 100%;
+   width: 100%;
+   position: absolute;
 }
 
 .pizzaPhoto {
@@ -142,6 +167,15 @@
       right: -8px;
       bottom: -8px;
       opacity: 1;
+   }
+}
+
+@keyframes hide-skeleton {
+   0% {
+      opacity: 1;
+   }
+   100% {
+      opacity: 0;
    }
 }
 

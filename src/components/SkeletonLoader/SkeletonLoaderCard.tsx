@@ -1,11 +1,10 @@
-import styles0 from "./SkeletonLoader.module.css";
-import styles1 from "../PizzaCard/Card.module.css";
+import styles from "./SkeletonLoader.module.css";
 
-const styles = { ...styles0, ...styles1 };
+interface SkeletonLoaderprops extends Partial<HTMLDivElement> {}
 
-function SceletonLoader(): JSX.Element {
+function SceletonLoader({ className }: SkeletonLoaderprops): JSX.Element {
    return (
-      <div className={styles.card}>
+      <div className={styles.skeletonCard + " " + className}>
          <div className={styles.skeletonPhoto} />
          <div className={styles.textConteiner}>
             <div className={styles.skeletonText__title}></div>
@@ -15,7 +14,7 @@ function SceletonLoader(): JSX.Element {
                   styles.skeletonText__title,
                   styles.skeletonText__price,
                ].join(" ")}
-            ></div>
+            />
          </div>
       </div>
    );
