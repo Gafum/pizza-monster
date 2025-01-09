@@ -11,7 +11,7 @@
    width: 280px;
    height: 100%;
    animation-name: hide-skeleton;
-   animation-duration: 1s;
+   animation-duration: 0.5s;
    animation-direction: reverse;
 }
 
@@ -21,7 +21,7 @@
    left: 0;
    z-index: 0;
    animation-name: hide-skeleton;
-   animation-duration: 1s;
+   animation-duration: 0.5s;
    opacity: 0;
 }
 
@@ -34,11 +34,14 @@
    position: relative;
 }
 
-.pizzaBackPhoto {
-   background-color: #f8892f;
-   height: 100%;
-   width: 100%;
+.pizzaBackPhoto.additionClass {
+   background-color: #f4a664;
    position: absolute;
+   top: 0;
+   left: 50%;
+   transform: translate(-61%, -2%);
+   scale: 94%;
+   transition: top 0.2s;
 }
 
 .pizzaPhoto {
@@ -211,5 +214,12 @@
       bottom: -10px;
       width: 22px;
       height: 22px;
+   }
+}
+
+@media (max-width: 340px) {
+   .pizzaBackPhoto.additionClass {
+      margin: 3%;
+      width: 91%;
    }
 }

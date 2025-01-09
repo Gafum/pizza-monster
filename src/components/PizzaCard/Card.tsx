@@ -2,10 +2,12 @@ import { ReactElement } from "react";
 
 import CustomButtonForCard from "./CustomButtonForCard";
 
-import styles from "./Card.module.css";
 import { Link } from "react-router-dom";
 import { createPictureURL } from "../../functions/createPictureURL";
 import SceletonLoader from "../SkeletonLoader/SkeletonLoaderCard";
+
+import styles from "./Card.module.css";
+import skeletonStyles from "../SkeletonLoader/SkeletonLoader.module.css";
 
 function Card({ id, name, description, price }: IPizzaElement): ReactElement {
    return (
@@ -13,7 +15,15 @@ function Card({ id, name, description, price }: IPizzaElement): ReactElement {
          <SceletonLoader className={styles.skeletonCard} />
          <div className={styles.card}>
             <Link to={`/pizza/${id}`} className={styles.canHover}>
-               {/* <div className={styles.pizzaBackPhoto} /> */}
+               <div
+                  className={
+                     styles.pizzaBackPhoto +
+                     " " +
+                     styles.additionClass +
+                     " " +
+                     skeletonStyles.skeletonPhoto
+                  }
+               />
                <div
                   style={{
                      backgroundImage: `url("${createPictureURL(id)}")`,

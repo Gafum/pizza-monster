@@ -86,7 +86,7 @@
 
    .skeletonText__price {
       height: 14px;
-      margin-top: 7px;
+      margin: 7px 0 6px;
       width: 15%;
    }
 }
