@@ -103,6 +103,7 @@ function Basket(): JSX.Element {
          <AnimatePresence>
             <motion.div
                layout
+               key={Math.random()}
                style={{
                   position: "absolute",
                   zIndex: "2",
@@ -114,9 +115,9 @@ function Basket(): JSX.Element {
             >
                <Footer isBasket={true} />
             </motion.div>
-            {Object.keys(pizzasInBasket).map((id: string) => (
-               <FindRightData key={id} id={id} />
-            ))}
+            {Object.keys(pizzasInBasket).map((id: string) => {
+               return <FindRightData key={id} id={id} />;
+            })}
 
             <BtnsInBasket
                buyProduction={buyProduction}

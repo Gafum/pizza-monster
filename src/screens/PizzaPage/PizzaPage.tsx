@@ -27,13 +27,16 @@ function PizzaPage(): JSX.Element {
          .get(url)
          .then((response) => {
             setPizza(response.data[0]);
+            document.title =
+               (response.data[0] as IPizzaElement).name + " Pizza";
          })
          .catch((error) => {
             console.log(error);
             setErrorWithData(true);
+            document.title = "Pizza not found";
          })
          .finally(() => setIsLoading(false));
-   }, [data]);
+   }, []);
 
    // Loading Data
    if (isLoading) {

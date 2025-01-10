@@ -9,11 +9,14 @@ function Footer({ isBasket = false }: { isBasket?: boolean }): JSX.Element {
       about: "About",
       basket: "Basket",
    };
+
    if (pathname == "/about") {
       data.about = "Home";
    } else {
       if (pathname == "/basket") {
+         // It will appear in the end of the page. But we don't need it in the basket page
          if (!isBasket) return <></>;
+         // It will appear in special component in the basket page
          data.basket = "Home";
       }
    }
