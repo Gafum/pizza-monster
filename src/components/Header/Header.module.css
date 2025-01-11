@@ -18,7 +18,8 @@
    align-content: center;
 }
 
-.header__text {
+.header__text,
+.header__text_short {
    color: white;
    font-weight: 900;
    font-size: 32px;
@@ -29,6 +30,10 @@
    word-break: break-word;
    text-wrap: nowrap;
    white-space: nowrap;
+}
+
+.header__text_short {
+   display: none;
 }
 
 .mainIcon {
@@ -63,7 +68,8 @@
       filter: drop-shadow(0px 6px 8px #f4a767);
    }
 
-   .header__text:hover {
+   .header__text:hover,
+   .header__text_short :hover {
       text-shadow: 0px 4px 16px rgb(161, 161, 161);
    }
 
@@ -90,7 +96,8 @@
    .header {
       padding: 10px 14px;
    }
-   .header__text {
+   .header__text,
+   .header__text_short {
       font-size: 18px;
       padding-left: 4px;
    }
@@ -104,5 +111,14 @@
 
    .header__title_basketBtn > svg {
       width: 14px;
+   }
+}
+
+@media (max-width: 300px) {
+   .header__text {
+      display: none;
+   }
+   .header__text_short {
+      display: inline-block;
    }
 }

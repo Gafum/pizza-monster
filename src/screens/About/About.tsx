@@ -12,6 +12,14 @@ function About(): JSX.Element {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
          >
+            <div className={styles.firstBlock}>
+               <img
+                  src="/pizza-monster/main-icon.svg"
+                  alt="pizza"
+                  className={styles.mainImg}
+               />
+               <h2>Pizza Monster</h2>
+            </div>
             <p>
                Welcome to Pizza Monster, where your pizza cravings meet the
                magic of technology. We are dedicated to providing a seamless and

@@ -1,7 +1,7 @@
 import MainIcon from "/main-icon.svg";
 import styles from "./Header.module.css";
 import { Link } from "react-router-dom";
-import { ReactElement, useEffect, useMemo, useState } from "react";
+import { ReactElement, useMemo } from "react";
 import { useSelector } from "react-redux";
 import { pizzasSelector } from "../../features/BasketSlice";
 import { findLenthOfBasketList } from "../../functions/findLenthOfBasketList";
@@ -34,28 +34,13 @@ function BusketBtn(): JSX.Element {
 }
 
 function Header(): ReactElement {
-   const [titleText, setTitleText] = useState<string>("Pizza Monster");
-
-   useEffect(() => {
-      function setTitle() {
-         if (window.innerWidth <= 250) {
-            setTitleText("PM");
-         } else {
-            setTitleText("Pizza Monster");
-         }
-      }
-
-      setTitle();
-
-      window.onresize = setTitle;
-   });
-
    return (
       <header className={styles.header}>
          <Link to="/">
             <span className={styles.header__title}>
                <img src={MainIcon} alt="icon" className={styles.mainIcon} />
-               <span className={styles.header__text}>{titleText}</span>
+               <span className={styles.header__text}>Pizza Monster</span>
+               <span className={styles.header__text_short}>PM</span>
             </span>
          </Link>
          <nav>

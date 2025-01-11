@@ -7,6 +7,25 @@
    font-weight: bold;
 }
 
+.firstBlock {
+   display: flex;
+   align-items: center;
+   justify-content: flex-start;
+   gap: 30px;
+   margin-bottom: 20px;
+}
+
+.firstBlock .mainImg {
+   width: 100px;
+   margin-left: 10px;
+}
+
+.firstBlock h2 {
+   font-size: 50px;
+   font-weight: bold;
+   color: #e0342e;
+}
+
 .smallTitle {
    font-size: 24px;
    color: #e0342e;
@@ -51,6 +70,14 @@
 }
 
 @media (max-width: 600px) {
+   .firstBlock h2 {
+      font-size: 30px;
+      width: 100%;
+      text-align: left;
+   }
+   .firstBlock .mainImg {
+      display: none;
+   }
    .listConteiner {
       padding: 8px;
    }
